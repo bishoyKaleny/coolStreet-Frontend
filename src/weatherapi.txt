@@ -1,0 +1,1 @@
+http://my.meteoblue.com/packages/multimodeltemperature-1h?lat=48.1351&lon=11.5820&apikey=EeDkuZvytb7YFUlh

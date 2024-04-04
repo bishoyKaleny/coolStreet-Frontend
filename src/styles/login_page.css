@@ -1,0 +1,82 @@
+/****login content****/
+.login-page {
+    height: 100vh;
+    /*need both for old browser*/
+    height: 100svh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 10rem;
+    width: 100%;
+    z-index: 800;
+    position: absolute;
+    background-color: var(--white0);
+    box-sizing: border-box;
+    right: 0;
+    /*maybe take out? delete*/
+  }
+  
+  .login-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-content.bottom {
+    bottom: 1rem;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    font-family: var(--ff-body-font-family);
+    padding: 1rem;
+  }
+  
+  .confirm-user-code {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-code {
+    color: var(--accent1_red);
+    border: 1px var(--gray50);
+  }
+  
+  .login-notify {
+    padding-bottom: 1rem;
+  }
+  
+  /*signup*/
+  .signup-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--margin-size);
+    width: 80%;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .text-input.signup {
+    width: 50%;
+  }
+  
+  .input-labels {
+    color: var(--gray60);
+    size: 1rem;
+    font-weight: 500;
+  }
+  /**/
+  
+  .login-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  

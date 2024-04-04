@@ -1,0 +1,1110 @@
+/*font import*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;800&family=Commissioner:wght@300;400;500;600;700&display=swap');
+
+/* Variables  */
+:root {
+  /*colors*/
+  --black100: #050E12FF;
+  --gray90: #0A1419FF;
+  --gray80: #1F3038FF;
+  --gray60: #3A5F77FF;
+  --gray50: #758494FF;
+  --gray30: #B5C3C9FF;
+  --gray10: #D3DDE1FF;
+  --white0: #F9F9F9;
+  --lightcomfort: #76C7EFFF;
+  --comfort: #1793D1FF;
+  --darkcomfort: #09628EFF;
+  --green: #198243FF;
+  --dark-green: #145C31FF;
+  --litegreen: #3BC472FF;
+  --fast: #A44A3FFF;
+  --lightfast: #D37468FF;
+  --darkfast: #762218FF;
+  --accent1_red: #FF556BFF;
+  --accent2_orange: #FE4F22FF;
+  --accent3_light: #F2EAD4FF;
+  --map_buildings: #D2D2D0FF;
+  --map_road: #FFFFFFFF;
+  --map_railway: #AFB3C5FF;
+  --map_poi: #C79285FF;
+  --map_aoi_school: #C6CFE1FF;
+  --map_aoi_hospital: #EFDCDCFF;
+  --map_vegetation_wood: #A2DB94FF;
+  --map_vegetation_parkand: #B1E5A4FF;
+  --map_water_waterway: #BFE4FDFF;
+  --map_water: #A1E5FCFF;
+  --map_base: #EFEDEBFF;
+  --background-white: #FEFEFFFF;
+  --route_1: #0D1851FF;
+  --route_2: #172572FF;
+  --route_3: #424D88FF;
+  --route_4: #5571AEFF;
+  --route_5: #B3A17EFF;
+  --route_6: #E9DEB8;
+  --route_7: #F5D633FF;
+  --route_8: #F59D4CFF;
+  --route_9: #F26648FF;
+  --route_10: #A14430FF;
+  --old_light-orange: #FF8060FF;
+  --old_pale-yellow: #FAF28EFF;
+  --old_allianzred: #FC1735FF;
+  --old_darkallianzred: #D90925FF;
+  --map-round-hover: #f4f4f4;
+
+  /*fonts*/
+  --ff-body-font-family: "Commissioner";
+  --ff-accent-font-family: "Comfortaa";
+
+  /*sizes*/
+  --fs-accent-big: 24px;
+  --fs-accent: 1.25rem;
+  --fs-accent-18: 1.125rem;
+  --fs-accent-minimal: 0.875rem;
+
+
+  /*formatting*/
+  --spacing-factor: 1.5;
+  --margin-size: 0.625rem;
+}
+
+
+
+html {
+  height: 100%;
+  font-size: 16px;
+  background: var(--white0);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-body-font-family), BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--comfort);
+  font-weight: 800;
+  font-family: var(--ff-accent-font-family);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray60);
+  font-family: var(--ff-accent-font-family);
+}
+
+h3,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: var(--gray60);
+}
+
+h3.navigation-instructions {
+  font-weight: 500;
+}
+
+h4 {
+  font-weight: 500;
+  color: var(--gray60);
+}
+
+h5 {
+  font-weight: 400;
+  font-family: var(--ff-body-font-family);
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: var(--gray80);
+}
+
+p {
+  font-family: var(--ff-body-font-family);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gray90);
+  line-height: normal;
+  letter-spacing: 0%;
+  gap: 1em;
+  margin-block: 0;
+  padding-bottom: 8px;
+}
+
+p.minimal {
+  color: var(--gray50);
+  font-size: var(--fs-accent-minimal);
+  font-weight: var(--light);
+}
+
+/*for some reason the p overrides, so need to keep
+these are only for the tooltips, note the no padding*/
+p.minimal.comfort {
+  color: var(--comfort);
+  padding-bottom: 0;
+}
+
+p.minimal.green {
+  color: var(--green);
+  padding-bottom: 0;
+}
+
+p.minimal.fast {
+  color: var(--fast);
+  padding-bottom: 0;
+}
+
+.error-message {
+  color: var(--accent2_orange);
+}
+
+/****dynamic display settings*****/
+
+.flex-row-filler {
+  flex-grow: 2;
+  background-color: red;
+  height: 100%;
+}
+
+.flex-column-filler {
+  flex-grow: 2;
+  background-color: red;
+  width: 100%;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*********/
+
+/****uls/ols*****/
+ul.suggestion-list {
+  list-style-type: none;
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+}
+
+ul li {
+  color: var(--gray80);
+  padding: 0.625rem;
+  font-size: var(--fs-accent-minimal);
+  list-style: none;
+}
+
+ul li:hover {
+  background-color: var(--gray10);
+  border-radius: 7px;
+}
+
+ol li {
+  padding-bottom: 16px;
+}
+
+/****links*****/
+/* unvisited link */
+a:link {
+  color: var(--comfort);
+}
+
+/* visited link */
+a:visited {
+  color: var(--gray60);
+}
+
+a:hover {
+  color: var(--accent1_red);
+}
+
+/* selected link */
+a:active {
+  color: var(--accent2_orange);
+}
+
+/*animations*/
+/* routeinfo*/
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*overall page div*/
+#page-div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100dvh;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  overflow: hidden;
+}
+
+#map-div {
+  height: 100%;
+}
+
+/*map attribution*/
+.mapbox-attribution-container {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  display: block;
+  margin: 0 10px 5px;
+}
+
+.mapbox-logo,
+.leaflet-logo {
+  position: absolute;
+  display: block;
+  width: 65px;
+  left: 5px;
+  bottom: 2px;
+  text-indent: -9999px;
+  z-index: 500;
+  overflow: hidden;
+  /* `background-image` contains the Mapbox logo */
+  background-image: url(/src/assets/logos/mapbox-logo-white.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 65px 16px;
+}
+
+.leaflet-logo {
+  left: 75px;
+  position: unset;
+  display: inline-flex;
+  background-image: url(/src/assets/logos/leaflet-logo.svg);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/****buttons****/
+button {
+  display: flex;
+  border: none;
+  height: 36px;
+  padding: 12px;
+  align-items: center;
+  min-width: 5em;
+  gap: 8px;
+  font-family: var(--ff-body-font-family);
+  font-size: var(--fs-body-16);
+  font-weight: var(--semibold);
+  color: var(--gray90);
+  background-color: var(--white0);
+  padding: 16px;
+  margin: 16px;
+  border-radius: 7px;
+  justify-content: center;
+}
+
+button.round {
+  border-radius: 50%;
+  height: auto;
+  margin: 0 auto;
+  min-width: 2.25rem;
+  /* this is 36px */
+  padding: 6px;
+  align-content: center;
+  justify-content: center;
+  background-color: var(--white0);
+}
+
+button.round-map {
+  border-radius: 50%;
+  margin: 0 auto;
+  min-width: 2.25rem;
+  padding: 6px;
+  align-content: center;
+  justify-content: center;
+  background-color: var(--white0);
+  margin-top: 10px;
+  z-index: 700;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.round-map:hover {
+  background-color: var(--map-round-hover);
+}
+
+button.nav-instructions {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.round-icon {
+  display: flex;
+  width: 24px;
+}
+
+button.round.swap-button {
+  position: absolute;
+  right: 2rem;
+  transform: translate(35%, 65%);
+  background: var(--white0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  z-index: 10;
+}
+
+button.legend {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+button.round.swap-button:hover {
+  background: var(--gray10);
+}
+
+button.back-button {
+  margin: 0;
+  padding: 0;
+  width: 36px;
+  align-items: center;
+  background-color: var(--white0);
+  min-width: 0;
+  justify-content: center;
+}
+
+button.back-button:active {
+  background-color: var(--gray10);
+}
+
+button.back-button.close {
+  right: 0;
+  position: absolute;
+  padding: 0;
+  margin-top: -0.9rem;
+  width: 36px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+button.filled {
+  color: var(--white0);
+  background-color: var(--comfort);
+  margin-bottom: 0;
+}
+
+button.outlined {
+  border: 2px solid var(--comfort, #1793D1);
+  color: var(--comfort);
+}
+
+button.text {
+  color: var(--gray80);
+  font-weight: 500;
+  text-decoration: underline;
+  margin: 16px;
+  margin-bottom: 0;
+}
+
+button.text:hover {
+  color: var(--gray90);
+  font-weight: 600;
+  box-shadow: none;
+  margin-left: 15.5px;
+  /*need for avoiding offset of neighbors*/
+}
+
+button.text.minimal {
+  color: var(--gray50);
+  font-size: var(--fs-accent-minimal);
+  margin: 0;
+}
+
+button.login-page-text {
+  color: var(--gray50);
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: underline;
+  position: relative;
+  height: 24px;
+  align-content: middle;
+}
+
+/* increase touch radius for text buttons */
+button.login-page-text:after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  left: -8px;
+  right: -8px;
+  /* border: solid 1px red; */
+}
+
+button.login-page-text:hover {
+  border: none;
+  box-shadow: none;
+  color: var(--gray80);
+}
+
+button.login-page-text.signup {
+  color: var(--comfort);
+  font-weight: bold;
+  padding: 0;
+  margin: -8px;
+}
+
+button.login-page-text.signup:hover {
+  color: var(--darkcomfort);
+}
+
+button.cancel {
+  background-color: var(--accent1_red);
+  color: var(--white0);
+}
+
+/* .button.map {
+  background-color: var(--accent1_red);
+} */
+
+button:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/*expand button for the navinstructions page*/
+.expand {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0;
+  padding: 0;
+}
+
+.expand:hover {
+  box-shadow: none;
+}
+
+
+/*floating action buttons*/
+.fab {
+  background-color: var(--comfort);
+  align-items: center;
+  justify-content: center;
+  border-radius: 17px;
+  height: 56px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.fab.minimal {
+  background-color: var(--white0);
+  color: var(--gray60);
+  text-decoration: underline;
+  position: absolute;
+  z-index: 500;
+  left: 50%;
+  margin: 0;
+}
+
+.fab-icon {
+  display: flex;
+  width: 32px;
+  color: var(--white0);
+  align-self: center;
+  justify-content: center;
+}
+
+.fab-text {
+  color: var(--white0);
+  font-size: 1rem;
+}
+
+.fab-text.dark {
+  color: var(--gray80);
+}
+
+.fab.startroute {
+  border-radius: 50px;
+  height: 3rem;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.fab.navigate {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  margin-bottom: -28px;
+  z-index: 2000;
+  margin-left: -64px;
+}
+
+.fab.feedback {
+  top: 85px;
+  position: absolute;
+  z-index: 700;
+  left: 50%;
+  margin-left: -102px;
+  margin-bottom: -28px;
+  background-color: var(--gray10);
+  padding: 12px;
+  height: 42px;
+  }
+
+.fab.feedback.whyai {
+  top: unset;
+  bottom:42px;
+  width: 200px;
+  left: 50%;
+  margin-left: -95px;
+  margin-top: 28px;
+  background-color: var(--white0);
+  border-radius: 40px;
+}
+
+/*this is the back button on the detailed nav instructions, needs to float and change in media query*/
+.detailed-back {
+  position: fixed;
+  bottom: 8px;
+  right: 0;
+}
+/*this is the wrapper for most back buttons*/
+.back-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: flex-start;
+}
+/*******/
+
+
+/*weather component for current weather*/
+/*parent element*/
+.search-bar-panel-weather {
+  display: flex;
+  position: absolute;
+  z-index: 400;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  /* border: 1px green solid; */
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+/*where the faq manager button is displayed*/
+.top-right-map-controls {
+  display: flex;
+  flex-direction: column;
+  top: 154px;
+  position: absolute;
+  right: 10px;
+}
+
+#weather-report {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--ff-body-font-family);
+  padding: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin: var(--margin-size);
+  font-size: 16px;
+  border-radius: 7px;
+  height: fit-content;
+  width: 153px;
+  font-weight: var(--medium);
+  color: var(--gray60);
+  background-color: var(--accent3_light);
+  gap: 4px;
+}
+
+.weather-icon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  color: var(--gray80);
+}
+
+/********/
+/*maybe can delete .panelclass*/
+.panelclass {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 40rem;
+}
+
+/*high-level parent for searchbar*/
+.huge-search-wrapper {
+  z-index: 700;
+  width: 100%;
+  top: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/*global values for search panel and navigation info panel (both the top elements of the ui)*/
+
+.search-bar-panel,
+.navigation-info-panel {
+  font-family: var(--ff-accent-font-family);
+  display: flex;
+  justify-content: flex-start;
+  max-width: 40em;
+  width: 100%;
+  flex-direction: column;
+  padding: var(--margin-size);
+  gap: 0.5rem;
+  z-index: 800;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  background: var(--white0);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  font-size: 1rem;
+}
+
+/*top half of panels*/
+.search-bar-panel-upper,
+.navigation-info-panel-upper {
+  display: flex;
+  font-size: 1rem;
+}
+
+/*bottom half of search-bar-panel*/
+.search-bar-panel-lower {
+  display: flex;
+  padding-left: 35px;
+  /*to line up with the other icons. maybe change*/
+  justify-content: space-between;
+}
+
+.legend:hover {
+  background-color: var(--gray10);
+}
+
+.legend-svg {
+  width: auto;
+  max-width: 345px;
+  display: flex;
+  margin: 8px 0 8px 0;
+}
+
+.search-bar-wrapper {
+  display: flex;
+  position: relative;
+  /*need for child which is the swap arrows*/
+  justify-content: flex-start;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+
+.long-wrapper {
+  height: unset;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.7rem;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.text-input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid var(--gray30);
+  border-radius: 7px;
+  font-family: var(--ff-accent-font-family);
+  color: var(--gray90);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gray60);
+}
+
+::placeholder {
+  color: var(--gray50);
+  opacity: 1;
+  /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Edge 12 -18 */
+  color: red;
+}
+
+.text-input:hover,
+.text-input:focus-visible,
+.text-input:focus-visible {
+  border: 1px solid var(--gray60);
+}
+
+.search-icon {
+  position: absolute;
+  height: 2rem;
+  right: 0.5rem;
+  top: 0.2rem;
+  /* This top is necessary to keep the icon in the bar on the ul li menu */
+  min-width: 0.5rem;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.search-icon:hover {
+  box-shadow: none;
+}
+/**/
+
+/****route info styles***/
+.route-info-panel {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  gap: 0.5rem;
+  align-items: center;
+  padding: var(--margin-size);
+  padding-right: 0;
+  max-width: 40rem;
+  bottom: 0;
+  z-index: 600;
+  width: 95%;
+  left: 0;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: var(--white0);
+  
+}
+
+/*animate the routeinfo, separate class to avoid on other views*/
+.animation-slide-up {
+  animation-name: slide-up;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.route-info,
+.distance-info,
+.route-me {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*the header and body that goes into the route info*/
+.route-info-header {
+  font-family: var(--ff-accent-font-family);
+  font-size: var(--fs-accent-big);
+  font-weight: 800;
+  color: var(--comfort);
+}
+
+.route-info-body {
+  font-family: var(--ff-accent-font-family);
+  font-weight: normal;
+  color: var(--darkcomfort);
+}
+
+/*define growing/shrinking*/
+.route-info-panel.distance-info {
+  justify-content: center;
+  align-content: center;
+  flex-grow: 2;
+}
+
+.route-info {
+  flex-grow: 0;
+  flex-shrink: 1;
+  align-items: flex-start;
+}
+
+.distance-info {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/*where the start button goes*/
+.route-me {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+/*********/
+
+/***navigation information***/
+.navigation-info-panel {
+  background-color: var(--white0);
+  font-family: var(--ff-body-font-family);
+  justify-content: center;
+  height: 92px;
+  position: absolute;
+  /*needed because haven't figured how to insert grandchild component above map in DOM*/
+}
+
+/*specific values for the navigation instructions*/
+.navigation-info-panel-upper {
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.navigation-info-panel-lower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-info-panel-lower:hover {
+  background-color: var(--gray10);
+}
+
+/*override height so button extends for forwards and backwards arrows*/
+.navigation-info-panel-upper .back-button {
+  height: unset;
+}
+
+/*center instruction text. use back wrapper for the rest (global)*/
+.instructions-wrapper {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/*if user want to open detailed steps panel*/
+.detailed-step-panel {
+  font-family: var(--ff-body-font-family);
+  position: absolute;
+  background-color: var(--white0);
+  max-width: 40em;
+  width: 100%;
+  padding: var(--margin-size);
+  overflow: auto;
+  height: 100%;
+  z-index: 800;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+  font-size: 1rem;
+}
+
+/*highlight the current step*/
+.highlighted {
+  color: var(--comfort);
+  font-weight: 600;
+  font-size: var(--fs-accent);
+}
+/*********/
+
+/***feedback***/
+.feedback-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.radio-buttons-wrapper {
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+/****@jiaying*****/
+.rotated-map .leaflet-tile-pane {
+  transform: rotate(10deg);
+  /* Rotate the map tiles */
+}
+
+/****media queries*****/
+
+@media only screen and (min-width: 680px) {
+
+  .fab.navigate,
+  .fab.feedback {
+      position: absolute;
+      left: 40rem;
+      top: 0rem;
+      margin-bottom: -28px;
+      z-index: 5000;
+      margin: 16px;
+    }
+  
+    .fab.navigate {
+      width: 136px;
+      margin-top: 4px;
+    }
+  
+    .fab.feedback {
+      left: 45rem;
+      width: 212px;
+      margin-left: -64px;
+      height: 56px;
+
+    }
+
+
+  .route-info-panel,
+  .huge-search-wrapper {
+    position: absolute;
+    width: 40rem;
+  }
+
+  .route-info-panel{
+    padding-right: var(--margin-size);
+  }
+
+  button.nav-instructions {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    transform: translate(18px, -42px);
+    right: 0;
+  }
+
+  .route-info {
+    max-width: none;
+  }
+
+  .top-right-map-controls {
+    top: 92px;
+  }
+
+  .navigation-info-panel-lower {
+    background-color: var(--white0);
+    position: fixed;
+    bottom: 40px;
+    z-index: 600;
+    max-width: 38rem;
+    width: 100%;
+    padding-left: 2rem;
+  }
+
+  .route-info-panel h3.navigation-instructions{
+    padding-bottom: 9px;
+  }
+
+
+}
+
+@media only screen and (min-width: 640px) {
+/****todo*****/
+
+  .detailed-back {
+    position: fixed;
+    top: 10px;
+    left: 32rem;
+    right: auto;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  /* Set legend to shrink for tiny phones */
+  button.legend {
+    width: 70%;
+  }
+}
+
+
+
+/****set dynamic colors must be at end of file?*****/
+
+.comfort-color {
+  color: var(--comfort);
+}
+
+.green-color {
+  color: var(--green);
+}
+
+.fast-color {
+  color: var(--fast);
+}
+
+.alt-color {
+  color: var(--gray60);
+}
+
+
+.comfort-bck-color {
+  background-color: var(--comfort);
+}
+
+.green-bck-color {
+  background-color: var(--green);
+
+}
+
+.fast-bck-color {
+  background-color: var(--fast);
+}
+
+.alt-bck-color {
+  background-color: var(--gray50);
+}
+
+.comfort-bck-color:hover {
+  background-color: var(--darkcomfort);
+}
+
+.green-bck-color:hover {
+  background-color: var(--dark-green);
+
+}
+
+.fast-bck-color:hover {
+  background-color: var(--darkfast);
+}
+
+.alt-bck-color:hover {
+  background-color: var(--gray60);
+}
+
+/*********/
+

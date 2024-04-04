@@ -1,0 +1,90 @@
+
+/*datetime*/
+
+.react-datepicker {
+    font-family: var(--ff-body-font-family);
+    color: var(--gray90);
+    width: fit-content;
+    left: 70px;
+  }
+  
+  .datetime-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+  }
+  
+  .datetime-wrapper:focus {
+    background-color: red;
+  }
+  
+  .react-datepicker__input-container {
+    padding-left: 0;
+    display: flex;
+  }
+  
+  .datetime-text-input-small {
+  
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 7px;
+    font-family: var(--ff-accent-font-family);
+    color: var(--gray50);
+    font-size: var(--fs-accent-minimal);
+    border: none;
+    text-decoration: underline;
+    width: 50px;
+  }
+  
+  .datetime-text-input-small:hover,
+  .datetime-text-input-small:focus,
+  .datetime-text-input-small:active {
+    background-color: var(--gray10);
+    font-weight: 700;
+    border: none;
+  }
+  
+  .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled {
+    display: none;
+  }
+  
+  
+  /*   .react-datepicker-ignore-onclickoutside {
+      width: max-content;
+      display: flex;
+    } */
+  
+  .react-datepicker-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+  }
+  
+  .react-datepicker__day--selected,
+  .react-datepicker__day--in-selecting-range,
+  .react-datepicker__day--in-range,
+  .react-datepicker__month-text--selected,
+  .react-datepicker__month-text--in-selecting-range,
+  .react-datepicker__month-text--in-range,
+  .react-datepicker__quarter-text--selected,
+  .react-datepicker__quarter-text--in-selecting-range,
+  .react-datepicker__quarter-text--in-range,
+  .react-datepicker__year-text--selected,
+  .react-datepicker__year-text--in-selecting-range,
+  .react-datepicker__year-text--in-range {
+    background: var(--gray60);
+  }
+  
+  .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
+    background-color: var(--gray60)
+  }
+  
+  .react-datepicker__day .react-datepicker__day--031 .react-datepicker__day--selected .react-datepicker__day--today {
+    background-color: var(--gray50);
+  }
+  
+  .react-datepicker__navigation {
+    margin: 0;
+  }

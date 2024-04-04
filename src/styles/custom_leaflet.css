@@ -1,0 +1,224 @@
+
+/**************** Leaflet styles************** */
+
+.leaflet-container {
+    font-family: var(--ff-body-font-family);
+  }
+  
+  .leaflet-bar {
+    box-shadow: none;
+    border: none;
+  }
+  
+  .leaflet-touch {
+    border: none;
+    box-shadow: none;
+    background-clip: unset;
+    height: 24px;
+    width: 24px;
+  }
+  
+  .leaflet-touch .leaflet-bar {
+    border: none;
+    background-clip: unset;
+  }
+  
+  .leaflet-touch .leaflet-bar a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  
+  .leaflet-control-layers {
+    background-color: transparent;
+    border: none;
+    border-radius: 80px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  
+  .leaflet-touch .leaflet-control-layers {
+    border: none;
+    background-clip: unset;
+  }
+  
+  .leaflet-control-layers-expanded {
+    background-color: var(--white0);
+    border: none;
+    color: var(--gray90);
+    border-radius: 0px;
+    width: 100%;
+    border-radius: 7px;
+  }
+  
+  .leaflet-interactive {
+    stroke-width: 7;
+  }
+  
+  /*control locate is the centering/current user location button*/
+  .leaflet-control-locate a {
+    cursor: pointer
+  }
+  
+  .leaflet-control-locate a .leaflet-control-locate-location-arrow {
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0px;
+    background-image: url(/src/assets/icons/map/my_location.svg);
+  }
+  
+  .leaflet-control-locate a .leaflet-control-locate-spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 0px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="black" d="M304 48a48 48 0 1 1-96 0 48 48 0 0 1 96 0zm-48 368a48 48 0 1 0 0 96 48 48 0 0 0 0-96zm208-208a48 48 0 1 0 0 96 48 48 0 0 0 0-96zM96 256a48 48 0 1 0-96 0 48 48 0 0 0 96 0zm13 99a48 48 0 1 0 0 96 48 48 0 0 0 0-96zm294 0a48 48 0 1 0 0 96 48 48 0 0 0 0-96zM109 61a48 48 0 1 0 0 96 48 48 0 0 0 0-96z"/></svg>');
+    animation: leaflet-control-locate-spin 2s linear infinite
+  }
+  
+  .leaflet-control-locate.active a .leaflet-control-locate-location-arrow {
+    background-image: url(/src/assets/icons/map/my_location_found.svg);
+  }
+  
+  .leaflet-control-locate.following a .leaflet-control-locate-location-arrow {
+    background-image: url(/src/assets/icons/map/my_location_searching.svg);
+  }
+  
+  .leaflet-control-locate-circle .leaflet-interactive {
+    stroke-opacity: 0;
+  }
+  
+  
+  /*scale bar*/
+  .leaflet-control-scale-line {
+    border: 1px solid #777;
+    border-top: none;
+    padding: 2px 5px 1px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-family: 'Commissioner';
+    background: rgba(255, 255, 255, 0.2);
+    text-shadow: 1px 1px #fff;
+  }
+  
+  
+  /* Styling for the Leaflet control bar */
+  .leaflet-bar {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    border-radius: 4px;
+    border-color: red;
+    border-width: 1px;
+  }
+  
+  /* Styling for individual buttons and control layers toggle */
+  .leaflet-control-layers-toggle {
+    background-image: url(/src/assets/icons/map/layers.svg);
+    background-color: var(--white0);
+    height: 24px;
+    width: 24px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    display: block;
+    padding: 6px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  
+  
+  .leaflet-touch .leaflet-control-layers-toggle {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Border radius adjustments so that the border is not overwritten */
+  .leaflet-touch .leaflet-bar a:first-child {
+    border-radius: 50%;
+  }
+  
+  .leaflet-touch .leaflet-bar a:last-child {
+    border-radius: 50%;
+  }
+  
+  
+  .leaflet-popup-content-wrapper {
+    border-radius: 7px;
+  }
+  
+  .leaflet-top,
+  .leaflet-bottom {
+    z-index: 600;
+  }
+  
+  /*bug: compass displays twice, this removes the top left one. 
+  Do not place anything in the top left map corner; it will not display */
+  .leaflet-top.leaflet-left {
+    display: none;
+  }
+  
+  .leaflet-retina .leaflet-control-layers-toggle {
+    background-image: url(/src/assets/icons/map/layers.svg);
+    height: 24px;
+    width: 24px;
+  }
+  
+  /* remove if you figure out the place to put the question mark.  */
+  .top-of-leaflet {
+    z-index: 900;
+  }
+  
+  /* default css for tooltips. need to make clickable */
+  .leaflet-tooltip {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: #222;
+    white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-items: center;
+    padding: 0.3rem;
+    gap: 0.3rem;
+    font-size: 14px;
+  }
+  
+  .leaflet-tooltip .tooltip-icon {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    color: var(--black100);
+  }
+
+  /**/
+  
+  /*leaflet custom popup*/
+  
+  .custom-popup .leaflet-popup-content-wrapper {
+    background: var(--white0);
+    gap: 8px;
+  
+  }
+  
+  .custom-popup .leaflet-popup-content-wrapper a {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .custom-popup .leaflet-popup-tip-container {
+    height: 0;
+    /*set to 0 to hide arrow*/
+    width: 0;
+  }
+  .custom-popup .leaflet-popup-content p{
+    padding: 0;
+    margin: 0;
+  }
+  
+  /********/
